@@ -42,13 +42,62 @@
         header h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         header p { font-size: 1.25rem; max-width: 700px; margin-bottom: 2rem; }
 
-        /* Waitlist Form */
-        .cta-box { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); padding: 2.5rem; border-radius: 12px; width: 100%; max-width: 550px; border: 1px solid rgba(255,255,255,0.2); }
-        .cta-box h3 { margin-bottom: 1rem; font-size: 1.5rem; }
-        .form-group { display: flex; gap: 0; }
-        .cta-box input { padding: 1rem; flex-grow: 1; border: none; border-radius: 4px 0 0 4px; outline: none; font-size: 1rem; }
-        .cta-box button { padding: 1rem 2rem; background: var(--moss); color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: bold; transition: 0.3s; font-size: 1rem; }
-        .cta-box button:hover { background: var(--forest-green); }
+       /* Waitlist Form */
+.cta-box { 
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(12px); 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    width: 100%; 
+    max-width: 550px; 
+    border: 1px solid rgba(255,255,255,0.2); 
+    /* NEW: Center the CTA content block itself */
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-box h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+
+/* *** CHANGE HERE: Modify the form-group display *** */
+.form-group { 
+    /* Force stacking and center the items */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* This centers the button and input horizontally */
+    gap: 1rem; /* Add gap for spacing between stacked items */
+}
+
+/* Update Input Styling */
+.cta-box input { 
+    padding: 1rem; 
+    width: 100%; /* Make input full width */
+    max-width: 300px; /* Optional: Limit input width for better appearance */
+    border: none; 
+    border-radius: 4px; /* Remove side-by-side radius */
+    outline: none; 
+    font-size: 1rem; 
+}
+
+/* Update Button Styling */
+.cta-box button { 
+    padding: 1rem 2rem; 
+    background: var(--moss); 
+    color: white; 
+    border: none; 
+    border-radius: 4px; /* Remove side-by-side radius */
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    font-size: 1rem; 
+    /* NEW: Ensure button is not stretching */
+    width: fit-content; 
+}
+.cta-box button:hover { background: var(--forest-green); }
+
+/* Remove the @media block since the primary styles now handle stacking */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.5rem; }
+    /* REMOVE the previous form-group and cta-box button/input styles here */
+}
 
         /* Mission Section */
         .section { padding: 5rem 10%; text-align: center; }
@@ -89,11 +138,12 @@
     <div class="cta-box">
         <h3>Join the Inner Circle</h3>
         <p style="margin-bottom: 20px; opacity: 0.9;">Stay up to date with us by joining the waitlist today.</p>
-        <form class="form-group">
-            <input type="email" placeholder="Enter your email address" required>
+        
+        <form class="form-group" action="https://form.jotform.com/253525390882160" method="GET">
+            
             <button type="submit">Join the Waitlist</button>
         </form>
-    </div>
+        </div>
 </header>
 
 <section class="section">
